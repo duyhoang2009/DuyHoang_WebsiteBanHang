@@ -1,0 +1,118 @@
+﻿@model List<WebsiteBanHang.Context.Product>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<section class="section-content padding-y">
+    <div class="container">
+
+
+        <!-- ============================  FILTER TOP  ================================= -->
+       
+
+
+        <div class="row">
+            <aside class="col-md-2">
+
+              
+            </aside> <!-- col.// -->
+            <main class="col-md-10">
+
+
+               
+                @foreach (var item in Model)
+                {
+                    <article class="card card-product-list">
+                        <div class="row no-gutters">
+                            <aside class="col-md-3">
+                                <a href="@Url.Action("Detail","Product",new { Id = item.Id})" class="img-wrap">
+                                    <span class="badge badge-danger"> NEW </span>
+                                    <img src="~/Content/images/items/@item.Avatar">
+                                </a>
+                            </aside> <!-- col.// -->
+                            <div class="col-md-6">
+                                <div class="info-main">
+                                    <a href="@Url.Action("Detail","Product",new { Id = item.Id})" class="h5 title"> @item.Name</a>
+                                    <div class="rating-wrap mb-2">
+                                        <ul class="rating-stars">
+                                            <li style="width:100%" class="stars-active">
+                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                            <li>
+                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                        </ul>
+                                        <div class="label-rating">9/10</div>
+                                    </div> <!-- rating-wrap.// -->
+
+                                    <p class="mb-3">
+                                        <span class="tag"> <i class="fa fa-check"></i> Verified</span>
+                                        <span class="tag"> 5 Years </span>
+                                        <span class="tag"> 80 reviews </span>
+                                        <span class="tag"> Russia </span>
+                                    </p>
+
+                                    <p>
+                                        @item.ShortDes
+                                    </p>
+
+                                </div> <!-- info-main.// -->
+                            </div> <!-- col.// -->
+                            <aside class="col-sm-3">
+                                <div class="info-aside">
+                                    <div class="price-wrap">
+                                        <span class="h5 price">@item.Price VNĐ</span>
+
+                                    </div> <!-- price-wrap.// -->
+                                  
+
+
+                                    <label class="custom-control mt-3 custom-checkbox">
+                                        
+                                    </label>
+
+                                </div> <!-- info-aside.// -->
+                            </aside> <!-- col.// -->
+                        </div> <!-- row.// -->
+                    </article> <!-- card-product .// -->
+
+                }
+
+             
+
+            </main> <!-- col.// -->
+
+        </div>
+
+    </div> <!-- container .//  -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+<!-- ========================= SECTION SUBSCRIBE  ========================= -->
+<section class="padding-y-lg bg-light border-top">
+    <div class="container">
+
+        <p class="pb-2 text-center">Delivering the latest product trends and industry news straight to your inbox</p>
+
+        <div class="row justify-content-md-center">
+            <div class="col-lg-4 col-sm-6">
+                <form class="form-row">
+                    <div class="col-8">
+                        <input class="form-control" placeholder="Your Email" type="email">
+                    </div> <!-- col.// -->
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-block btn-warning"> <i class="fa fa-envelope"></i> Subscribe </button>
+                    </div> <!-- col.// -->
+                </form>
+                <small class="form-text">We’ll never share your email address with a third-party. </small>
+            </div> <!-- col-md-6.// -->
+        </div>
+
+
+    </div>
+</section>
+<!-- ========================= SECTION SUBSCRIBE END// ========================= -->
